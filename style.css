@@ -1,0 +1,1236 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Commissioner_reg;
+  src: url(fonts/Commissioner-Regular.ttf);
+}
+@font-face {
+  font-family: Commissioner_bold;
+  src: url(fonts/Commissioner-Bold.ttf);
+}
+/*colors*/
+/*styling*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  background-color: hsl(0, 0%, 82%);
+  z-index: 0.1px;
+}
+
+#bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: hsl(0, 0%, 0%);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#bg.active {
+  opacity: 0.4;
+  transition: 0.5s;
+  pointer-events: all;
+  z-index: 2;
+}
+
+nav {
+  width: 90%;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 5%;
+  top: 5.5rem;
+  background-color: hsl(0, 0%, 85%);
+  border-radius: 0.5rem;
+  z-index: 2;
+  transition: 0.5s;
+}
+nav > p {
+  font-family: Commissioner_reg;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  padding: 1.4rem;
+  border-bottom: 0.5px solid hsl(0, 0%, 75%);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+nav > p:hover {
+  cursor: pointer;
+}
+nav > p a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+
+.logo {
+  position: absolute;
+  top: 1.8rem;
+  left: 1.2rem;
+}
+
+.menu {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.5rem;
+  height: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu > div {
+  width: 1.2rem;
+  height: 0.2rem;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 85%);
+}
+
+.hero {
+  width: 100vw;
+  position: relative;
+  z-index: -1;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.top {
+  background-color: hsl(0, 0%, 85%);
+  border-radius: 0.5rem;
+  width: 87%;
+  height: 16.5rem;
+  text-align: center;
+  position: relative;
+  bottom: 3.6rem;
+  z-index: -1;
+}
+.top > img {
+  position: relative;
+  bottom: 1.8rem;
+}
+.top > h2 {
+  font-family: Commissioner_bold;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  padding: 0 20%;
+  position: relative;
+  bottom: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+.top > p {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  width: 90%;
+  margin: 0 auto;
+}
+.top > div {
+  margin: 1.5rem auto;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+.top > div > button {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 85%);
+  font-weight: 700;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  width: 13rem;
+  height: 3.5rem;
+}
+.top > div > button:hover {
+  background-color: hsl(176, 72%, 28%);
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.top > div > #Bookmark {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: hsla(0, 0%, 75%, 0.4);
+}
+.top > div > #Bookmark > img {
+  height: 3.5rem;
+}
+.top > div > #Bookmark > p {
+  display: none;
+}
+
+.stats {
+  background-color: hsl(0, 0%, 85%);
+  border-radius: 0.5rem;
+  width: 87%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24rem;
+  position: relative;
+  bottom: 1.8rem;
+  z-index: -1;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+.stats > .flexStats {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}
+.stats > .flexStats > h1 {
+  font-family: Commissioner_bold;
+  font-size: 2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  line-height: 2rem;
+}
+.stats > .flexStats > h1 > span {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+}
+.stats > .flexStats > div {
+  background-color: hsl(0, 0%, 75%);
+  height: 1px;
+  width: 5rem;
+}
+.stats > .bar {
+  height: 0.8rem;
+  width: 90%;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: hsla(0, 0%, 75%, 0.4);
+}
+.stats > .bar > .prog {
+  background-color: hsl(176, 50%, 47%);
+  width: 80%;
+  height: 0.8rem;
+  border-radius: 1rem;
+}
+
+b {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(176, 50%, 47%);
+  font-weight: 500;
+}
+
+.bulk {
+  background-color: hsl(0, 0%, 85%);
+  border-radius: 0.5rem;
+  width: 87%;
+  padding: 1.5rem;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: -1;
+}
+.bulk > .about > h2 {
+  font-family: Commissioner_bold;
+  font-size: 1.1rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  margin: 0.4rem 0 1.2rem 0;
+}
+.bulk > .about > p {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  line-height: 1.3rem;
+  margin-bottom: 2rem;
+}
+.bulk > .bamboo {
+  border: 1px solid hsl(0, 0%, 48%);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.bulk > .bamboo > h3 {
+  font-family: Commissioner_bold;
+  font-size: 1rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.bulk > .bamboo > p {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  line-height: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+.bulk > .bamboo > h4 {
+  font-family: Commissioner_bold;
+  font-size: 2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.bulk > .bamboo > h4 > span {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  position: relative;
+  bottom: 0.3rem;
+}
+.bulk > .bamboo > button {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 85%);
+  font-weight: 700;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  width: 10rem;
+  height: 3rem;
+}
+.bulk > .bamboo > button:hover {
+  background-color: hsl(176, 72%, 28%);
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.bulk > .black {
+  border: 1px solid hsl(0, 0%, 48%);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.bulk > .black > h3 {
+  font-family: Commissioner_bold;
+  font-size: 1rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.bulk > .black > p {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  line-height: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+.bulk > .black > h4 {
+  font-family: Commissioner_bold;
+  font-size: 2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.bulk > .black > h4 > span {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  position: relative;
+  bottom: 0.3rem;
+}
+.bulk > .black > button {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 85%);
+  font-weight: 700;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  width: 10rem;
+  height: 3rem;
+}
+.bulk > .black > button:hover {
+  background-color: hsl(176, 72%, 28%);
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.bulk > .mahogany {
+  border: 1px solid hsl(0, 0%, 48%);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.bulk > .mahogany > h3 {
+  font-family: Commissioner_bold;
+  font-size: 1rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.bulk > .mahogany > p {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  line-height: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+.bulk > .mahogany > h4 {
+  font-family: Commissioner_bold;
+  font-size: 2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.bulk > .mahogany > h4 > span {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  position: relative;
+  bottom: 0.3rem;
+}
+.bulk > .mahogany > button {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 85%);
+  font-weight: 700;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  width: 10rem;
+  height: 3rem;
+}
+.bulk > .mahogany > button:hover {
+  background-color: hsl(176, 72%, 28%);
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.bulk > .mahogany > button {
+  background-color: hsl(0, 0%, 48%);
+}
+
+.support {
+  background-color: hsl(0, 0%, 85%);
+  border-radius: 0.5rem;
+  width: 87%;
+  padding: 1.5rem;
+  position: absolute;
+  left: 6.5%;
+  top: 3rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 2;
+}
+.support > h2 {
+  font-family: Commissioner_bold;
+  font-size: 1.1rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  margin: 0.4rem 0 1.2rem 0;
+}
+.support > img {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+}
+.support > p {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  line-height: 1.3rem;
+  margin-bottom: 2rem;
+}
+.support .pledgeRd h3 {
+  margin-top: 0.8rem;
+}
+.support .pledgeRd button {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 85%);
+  font-weight: 700;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  height: 2.7rem;
+  width: 7.5rem;
+  margin-top: 1.3rem;
+}
+.support .pledgeRd button:hover {
+  background-color: hsl(176, 72%, 28%);
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.support > section {
+  border: 1px solid hsl(0, 0%, 48%);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.support > section > h3 {
+  font-family: Commissioner_bold;
+  font-size: 1rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.support > section > p {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  line-height: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+.support > section > h4 {
+  font-family: Commissioner_bold;
+  font-size: 2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.support > section > h4 > span {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  position: relative;
+  bottom: 0.3rem;
+}
+.support > section > button {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 85%);
+  font-weight: 700;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  width: 10rem;
+  height: 3rem;
+}
+.support > section > button:hover {
+  background-color: hsl(176, 72%, 28%);
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.support > section h3 {
+  margin-left: 2.4rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.support > section h3:hover {
+  color: hsl(176, 50%, 47%);
+  cursor: pointer;
+}
+.support > section h4 {
+  font-size: 1.5rem;
+}
+.support > section h4 span {
+  bottom: 0.2rem;
+}
+.support > section .radio {
+  position: absolute;
+  margin-top: 0.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid hsl(0, 0%, 48%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.support > section .radio:hover {
+  border-color: hsl(176, 50%, 47%);
+}
+.support > section .radio div {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 1rem;
+  display: none;
+}
+.support > section .pledge {
+  padding: 0 1.2rem;
+  border-top: 1px solid hsl(0, 0%, 48%);
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 -1.2rem;
+  background-color: hsl(0, 0%, 85%);
+  text-align: center;
+}
+.support > section .pledge p {
+  font-family: Commissioner_reg;
+  font-size: 1.1rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  margin: 1.6rem 0 0 0;
+}
+.support > section .pledge .space {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 0 0 0;
+}
+.support > section .pledge .space input {
+  height: 2.7rem;
+  width: 6rem;
+  border-radius: 2rem;
+  font-family: Commissioner_bold;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+}
+.support > section .pledge .space input:hover {
+  border-color: hsl(176, 50%, 47%);
+  cursor: pointer;
+}
+.support > section .pledge .space button {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 85%);
+  font-weight: 700;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  height: 2.7rem;
+  width: 7.5rem;
+}
+.support > section .pledge .space button:hover {
+  background-color: hsl(176, 72%, 28%);
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.support > section .pledge .space .dollar {
+  position: absolute;
+  left: 1.2rem;
+  top: 0.8rem;
+}
+.support .pledgeRd .pledge button {
+  margin: 1rem auto 0 auto;
+}
+.support .mahoganyRd {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popUp {
+  background-color: hsl(0, 0%, 85%);
+  border-radius: 0.5rem;
+  width: 87%;
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  margin-left: -10.5rem;
+  top: 50%;
+  margin-top: -11.5rem;
+  width: 21rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 23rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.popUp img {
+  width: 4rem;
+  margin: 0 auto;
+}
+.popUp h2 {
+  font-family: Commissioner_bold;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+}
+.popUp p {
+  font-family: Commissioner_reg;
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+  line-height: 1.4rem;
+}
+.popUp button {
+  font-family: Commissioner_reg;
+  font-size: 1rem;
+  color: hsl(0, 0%, 85%);
+  font-weight: 700;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  height: 3rem;
+  width: 7rem;
+  margin: 0 auto;
+}
+.popUp button:hover {
+  background-color: hsl(176, 72%, 28%);
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/*active states using js*/
+nav.active {
+  height: 13rem;
+  transition: 0.5s;
+}
+
+#line2 {
+  transition: 0.25s;
+  transition-delay: 0.25s;
+}
+
+#line1.rest {
+  animation: Anim3;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#line1.active {
+  animation: Anim1;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#line2.active {
+  transform: translateX(1rem);
+  opacity: 0;
+  transition: 0.25s;
+  transition-delay: 0.25s;
+}
+
+#line3.rest {
+  animation: Anim4;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#line3.active {
+  animation: Anim2;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes Anim1 {
+  0% {
+    transform: translate(0px);
+  }
+  50% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    transform: translateY(0.38rem) rotate(-45deg);
+  }
+}
+@keyframes Anim2 {
+  0% {
+    transform: translate(0px);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(-0.38rem) rotate(45deg);
+  }
+}
+@keyframes Anim3 {
+  0% {
+    transform: translateY(0.38rem) rotate(45deg);
+  }
+  50% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+@keyframes Anim4 {
+  0% {
+    transform: translateY(-0.38rem) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+.top #Bookmark.visited {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.support.active {
+  opacity: 1;
+  transform: translateY(5rem);
+  transition: 0.3s;
+  z-index: 2;
+  pointer-events: all;
+}
+
+.select.active {
+  border: 2px solid hsl(176, 50%, 47%);
+}
+.select.active > div > div {
+  display: block;
+}
+.select.active .pledge {
+  display: flex;
+}
+
+.popUp.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1.1, 1.1);
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 594px) {
+  header {
+    width: 100vw;
+    display: flex;
+  }
+  nav {
+    position: absolute;
+    top: 2rem;
+    right: 10%;
+    opacity: 1;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    width: 14rem;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  nav p {
+    font-family: Commissioner_reg;
+    font-size: 1rem;
+    color: hsl(0, 0%, 85%);
+    font-weight: 400;
+    padding: 0;
+    border: 0;
+  }
+  nav p a {
+    text-decoration: none;
+    color: hsl(0, 0%, 85%);
+  }
+  .logo {
+    left: 10%;
+  }
+  .menu {
+    display: none;
+  }
+  main {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+  .top {
+    height: 14rem;
+    bottom: 3.6rem;
+  }
+  .top > div > #Bookmark {
+    width: 11rem;
+    font-family: Commissioner_reg;
+    font-size: 1rem;
+    color: hsl(0, 0%, 48%);
+    font-weight: 600;
+    display: flex;
+  }
+  .top > div > #Bookmark p {
+    display: inline;
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+  }
+  .top #Bookmark.visited {
+    width: 12rem;
+  }
+  .stats {
+    position: relative;
+    height: 12rem;
+    padding: 2rem;
+    align-items: start;
+  }
+  .stats .flexStats {
+    flex-direction: row;
+    width: 80%;
+  }
+  .stats .flexStats div {
+    width: 0.5px;
+    height: 4rem;
+  }
+  .stats .bar {
+    width: 100%;
+  }
+  .bulk section {
+    position: relative;
+  }
+  .bulk section h3 {
+    position: relative;
+  }
+  .bulk section h3 b {
+    position: absolute;
+    right: 0;
+    top: -0.1rem;
+  }
+  .bulk section button {
+    position: absolute;
+    right: 1.2rem;
+    bottom: 2.4rem;
+  }
+  .bulk section h4 {
+    margin-bottom: 0;
+  }
+  .support {
+    max-width: 43.5rem;
+    padding: 2rem;
+  }
+  .support section .pledge {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .support section .pledge p {
+    margin-top: 1.2rem;
+  }
+  .support section .pledge .space {
+    margin-top: 1.5rem;
+    width: 14rem;
+  }
+  .popUp {
+    width: 28rem;
+    margin-left: -14rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .top {
+    bottom: 4rem;
+    height: 15rem;
+  }
+  .top h2 {
+    font-size: 1.6rem;
+  }
+  .top > p {
+    font-size: 1.1rem;
+  }
+  .stats {
+    height: 13rem;
+  }
+  .stats .flexStats {
+    text-align: start;
+  }
+  .stats .flexStats h1 {
+    font-size: 2rem;
+  }
+  .stats .flexStats h1 span {
+    font-size: 1.1rem;
+  }
+  .bulk {
+    padding: 2rem;
+  }
+  .bulk p {
+    font-size: 1.1rem;
+  }
+  .bulk .about h2 {
+    font-size: 1.3rem;
+  }
+  .bulk .about p {
+    font-size: 1.1rem;
+  }
+  .bulk .bamboo,
+  .bulk .black,
+  .bulk .mahogany {
+    padding: 2rem;
+  }
+  .bulk .bamboo h3,
+  .bulk .black h3,
+  .bulk .mahogany h3 {
+    font-size: 1.2rem;
+  }
+  .bulk .bamboo p,
+  .bulk .black p,
+  .bulk .mahogany p {
+    font-size: 1.1rem;
+  }
+  .bulk .bamboo button,
+  .bulk .black button,
+  .bulk .mahogany button {
+    right: 2rem;
+    bottom: 1.5rem;
+  }
+  .bulk .bamboo h4,
+  .bulk .black h4,
+  .bulk .mahogany h4 {
+    margin-bottom: 0;
+  }
+  .support {
+    left: 50%;
+    margin-left: -21.75rem;
+  }
+  .support h2 {
+    font-size: 1.3rem;
+  }
+  .support p {
+    font-size: 1.1rem;
+  }
+  .support .pledgeRd h3,
+  .support .bambooRd h3,
+  .support .blackRd h3,
+  .support .mahoganyRd h3 {
+    font-size: 1.2rem;
+  }
+  .support .pledgeRd p,
+  .support .bambooRd p,
+  .support .blackRd p,
+  .support .mahoganyRd p {
+    font-size: 1.1rem;
+  }
+  .popUp h2 {
+    font-size: 1.3rem;
+  }
+  .popUp p {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  header .logo {
+    top: 3rem;
+    left: 10%;
+    width: 10rem;
+  }
+  header nav {
+    top: 3rem;
+    right: 9%;
+  }
+  main {
+    max-width: 62rem;
+    margin: 0 auto;
+  }
+  main .top h2 {
+    font-size: 1.8rem;
+  }
+  main .top > p {
+    font-size: 1.1rem;
+  }
+  main .stats .flexStats h1 {
+    font-size: 2.4rem;
+  }
+  main .stats .flexStats h1 span {
+    font-size: 1.1rem;
+  }
+  .bulk {
+    padding: 3rem;
+  }
+  .bulk .about h2 {
+    font-size: 1.5rem;
+  }
+  .bulk .about p {
+    font-size: 1.2rem;
+  }
+  .bulk .bamboo h3,
+  .bulk .black h3,
+  .bulk .mahogany h3 {
+    font-size: 1.3rem;
+  }
+  .bulk .bamboo p,
+  .bulk .black p,
+  .bulk .mahogany p {
+    font-size: 1.2rem;
+  }
+  .support {
+    top: 6rem;
+    margin-left: -27rem;
+    max-width: 54rem;
+    padding: 3rem;
+  }
+  .support h2 {
+    font-size: 1.5rem;
+  }
+  .support p {
+    font-size: 1.2rem;
+  }
+  .support .pledgeRd,
+  .support .bambooRd,
+  .support .blackRd,
+  .support .mahoganyRd {
+    padding: 2rem;
+  }
+  .support .pledgeRd .radio,
+  .support .bambooRd .radio,
+  .support .blackRd .radio,
+  .support .mahoganyRd .radio {
+    margin-top: 0rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .support .pledgeRd .radio div,
+  .support .bambooRd .radio div,
+  .support .blackRd .radio div,
+  .support .mahoganyRd .radio div {
+    width: 1rem;
+    height: 1rem;
+  }
+  .support .pledgeRd h3,
+  .support .bambooRd h3,
+  .support .blackRd h3,
+  .support .mahoganyRd h3 {
+    font-size: 1.3rem;
+    margin-left: 3rem;
+    margin-top: 0.3rem;
+  }
+  .support .pledgeRd h3 br,
+  .support .bambooRd h3 br,
+  .support .blackRd h3 br,
+  .support .mahoganyRd h3 br {
+    display: none;
+  }
+  .support .pledgeRd h3 b,
+  .support .bambooRd h3 b,
+  .support .blackRd h3 b,
+  .support .mahoganyRd h3 b {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+  }
+  .support .pledgeRd p,
+  .support .bambooRd p,
+  .support .blackRd p,
+  .support .mahoganyRd p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .support .pledgeRd button,
+  .support .bambooRd button,
+  .support .blackRd button,
+  .support .mahoganyRd button {
+    right: 2rem;
+    bottom: 1.5rem;
+  }
+  .support .pledgeRd h4,
+  .support .bambooRd h4,
+  .support .blackRd h4,
+  .support .mahoganyRd h4 {
+    margin-bottom: 0;
+    position: absolute;
+    right: 2rem;
+  }
+  .support .pledge {
+    padding: 0 2rem;
+    border-top: 1px solid hsl(0, 0%, 48%);
+    display: none;
+    align-items: center;
+    margin: 0 -2rem;
+  }
+  .support .pledge p {
+    font-size: 1.3rem;
+  }
+  .support .pledge input {
+    height: 3rem;
+    width: 7rem;
+    border-radius: 4rem;
+  }
+  .support .pledge button {
+    height: 3rem;
+    width: 8rem;
+  }
+  .support .pledgeRd .pledge button {
+    margin-top: 1.5rem;
+  }
+  .popUp {
+    width: 39rem;
+    height: 27rem;
+    padding: 2rem 3rem;
+    margin-left: -19.5rem;
+    margin-top: -13.5rem;
+  }
+  .popUp img {
+    width: 6rem;
+  }
+  .popUp h2 {
+    font-size: 1.8rem;
+  }
+  .popUp p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
+@media screen and (min-width: 1260px) {
+  header .logo {
+    top: 4rem;
+    left: 12%;
+    width: 10rem;
+  }
+  header nav {
+    top: 4rem;
+    right: 12%;
+  }
+  main .top {
+    bottom: 7.5rem;
+    height: 16rem;
+  }
+  main .top h2 {
+    font-size: 2rem;
+  }
+  main .top > p {
+    font-size: 1.2rem;
+  }
+  main .stats {
+    position: relative;
+    bottom: 5rem;
+  }
+  main .bulk {
+    position: relative;
+    bottom: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */

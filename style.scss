@@ -1,0 +1,1047 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Commissioner_reg;
+  src: url(fonts/Commissioner-Regular.ttf);
+}
+
+@font-face {
+  font-family: Commissioner_bold;
+  src: url(fonts/Commissioner-Bold.ttf);
+}
+
+/*colors*/
+$cyan: hsl(176, 50%, 47%);
+$darkCyan: hsl(176, 72%, 28%);
+$black: hsl(0, 0%, 0%);
+$darkGray: hsl(0, 0%, 48%);
+$lGray: hsl(0, 0%, 75%);
+$liGray: hsl(0, 0%, 75%, 0.4);
+$bg: hsl(0, 0%, 82%);
+$white: hsl(0, 0%, 85%);
+
+@mixin text($font, $size, $weight, $color) {
+  font-family: $font;
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin article {
+  background-color: $white;
+  border-radius: 0.5rem;
+  width: 87%;
+}
+
+@mixin section {
+  border: 1px solid $darkGray;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  & > h3 {
+    @include text(Commissioner_bold, 1rem, 700, $black);
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  & > p {
+    @include text(Commissioner_reg, 0.9rem, 400, $darkGray);
+    line-height: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  & > h4 {
+    @include text(Commissioner_bold, 2rem, 700, $black);
+    margin-bottom: 1.5rem;
+    & > span {
+      @include text(Commissioner_reg, 1rem, 400, $darkGray);
+      position: relative;
+      bottom: 0.3rem;
+    }
+  }
+
+  & > button {
+    @include button();
+    width: 10rem;
+    height: 3rem;
+  }
+}
+
+@mixin button {
+  @include text(Commissioner_reg, 1rem, 700, $white);
+  background-color: $cyan;
+  border-radius: 5rem;
+  border: none;
+  transition: 0.5s;
+  &:hover {
+    background-color: $darkCyan;
+    transform: scale(1.05, 1.05);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}
+
+/*styling*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  background-color: $bg;
+  z-index: 0.1px;
+}
+
+#bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: $black;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#bg.active {
+  opacity: 0.4;
+  transition: 0.5s;
+  pointer-events: all;
+  z-index: 2;
+}
+
+nav {
+  width: 90%;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 5%;
+  top: 5.5rem;
+  background-color: $white;
+  border-radius: 0.5rem;
+  z-index: 2;
+  transition: 0.5s;
+
+  & > p {
+    @include text(Commissioner_reg, 1.2rem, 700, $black);
+    padding: 1.4rem;
+    border-bottom: 0.5px solid $lGray;
+    width: fit-content;
+    &:hover {
+      cursor: pointer;
+    }
+    a {
+      text-decoration: none;
+      color: $black;
+    }
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 1.8rem;
+  left: 1.2rem;
+}
+
+.menu {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.5rem;
+  height: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & > div {
+    width: 1.2rem;
+    height: 0.2rem;
+    border-radius: 1rem;
+    background-color: $white;
+  }
+}
+
+.hero {
+  width: 100vw;
+  position: relative;
+  z-index: -1;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.top {
+  @include article();
+  height: 16.5rem;
+  text-align: center;
+  position: relative;
+  bottom: 3.6rem;
+  z-index: -1;
+
+  & > img {
+    position: relative;
+    bottom: 1.8rem;
+  }
+
+  & > h2 {
+    @include text(Commissioner_bold, 1.2rem, 700, $black);
+    padding: 0 20%;
+    position: relative;
+    bottom: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  & > p {
+    @include text(Commissioner_reg, 0.9rem, 400, $darkGray);
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  & > div {
+    margin: 1.5rem auto;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+
+    & > button {
+      @include button();
+      width: 13rem;
+      height: 3.5rem;
+    }
+
+    & > #Bookmark {
+      width: fit-content;
+      background-color: $liGray;
+      & > img {
+        height: 3.5rem;
+      }
+      & > p {
+        display: none;
+      }
+    }
+  }
+}
+
+.stats {
+  @include article();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24rem;
+  position: relative;
+  bottom: 1.8rem;
+  z-index: -1;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+
+  & > .flexStats {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+    & > h1 {
+      @include text(Commissioner_bold, 2rem, 700, $black);
+      line-height: 2rem;
+      & > span {
+        @include text(Commissioner_reg, 0.9rem, 400, $darkGray);
+      }
+    }
+    & > div {
+      background-color: $lGray;
+      height: 1px;
+      width: 5rem;
+    }
+  }
+
+  & > .bar {
+    height: 0.8rem;
+    width: 90%;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: $liGray;
+    & > .prog {
+      background-color: $cyan;
+      width: 80%;
+      height: 0.8rem;
+      border-radius: 1rem;
+    }
+  }
+}
+
+b {
+  @include text(Commissioner_reg, 1rem, 500, $cyan);
+}
+
+.bulk {
+  @include article();
+  padding: 1.5rem;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: -1;
+
+  & > .about {
+    & > h2 {
+      @include text(Commissioner_bold, 1.1rem, 700, $black);
+      margin: 0.4rem 0 1.2rem 0;
+    }
+
+    & > p {
+      @include text(Commissioner_reg, 0.9rem, 400, $darkGray);
+      line-height: 1.3rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  & > .bamboo {
+    @include section();
+  }
+
+  & > .black {
+    @include section();
+  }
+
+  & > .mahogany {
+    @include section();
+    opacity: 0.5;
+    pointer-events: none;
+    & > button {
+      background-color: $darkGray;
+    }
+  }
+}
+
+.support {
+  @include article();
+  padding: 1.5rem;
+  position: absolute;
+  left: 6.5%;
+  top: 3rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 2;
+
+  & > h2 {
+    @include text(Commissioner_bold, 1.1rem, 700, $black);
+    margin: 0.4rem 0 1.2rem 0;
+  }
+
+  & > img {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+  }
+
+  & > p {
+    @include text(Commissioner_reg, 0.9rem, 400, $darkGray);
+    line-height: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .pledgeRd {
+    h3 {
+      margin-top: 0.8rem;
+    }
+    button {
+      @include button();
+      height: 2.7rem;
+      width: 7.5rem;
+      margin-top: 1.3rem;
+    }
+  }
+
+  & > section {
+    @include section();
+    position: relative;
+    h3 {
+      margin-left: 2.4rem;
+      width: fit-content;
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+    h4 {
+      font-size: 1.5rem;
+      span {
+        bottom: 0.2rem;
+      }
+    }
+    .radio {
+      position: absolute;
+      margin-top: 0.8rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 2rem;
+      border: 1px solid $darkGray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        border-color: $cyan;
+      }
+      div {
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: $cyan;
+        border-radius: 1rem;
+        display: none;
+      }
+    }
+
+    .pledge {
+      padding: 0 1.2rem;
+      border-top: 1px solid $darkGray;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 -1.2rem;
+      background-color: $white;
+      text-align: center;
+
+      p {
+        @include text(Commissioner_reg, 1.1rem, 400, $darkGray);
+        margin: 1.6rem 0 0 0;
+      }
+      .space {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 1rem 0 0 0;
+        input {
+          height: 2.7rem;
+          width: 6rem;
+          border-radius: 2rem;
+          @include text(Commissioner_bold, 1.2rem, 700, $black);
+          text-align: center;
+          outline: none;
+          &:hover {
+            border-color: $cyan;
+            cursor: pointer;
+          }
+        }
+        button {
+          @include button();
+          height: 2.7rem;
+          width: 7.5rem;
+        }
+        .dollar {
+          position: absolute;
+          left: 1.2rem;
+          top: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .pledgeRd {
+    .pledge {
+      button {
+        margin: 1rem auto 0 auto;
+      }
+    }
+  }
+
+  .mahoganyRd {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.popUp {
+  @include article();
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  margin-left: -10.5rem;
+  top: 50%;
+  margin-top: -11.5rem;
+  width: 21rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 23rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  img {
+    width: 4rem;
+    margin: 0 auto;
+  }
+  h2 {
+    @include text(Commissioner_bold, 1.2rem, 700, $black);
+  }
+  p {
+    @include text(Commissioner_reg, 0.9rem, 400, $darkGray);
+    line-height: 1.4rem;
+  }
+  button {
+    @include button();
+    height: 3rem;
+    width: 7rem;
+    margin: 0 auto;
+  }
+}
+
+/*active states using js*/
+nav.active {
+  height: 13rem;
+  transition: 0.5s;
+}
+
+#line2 {
+  transition: 0.25s;
+  transition-delay: 0.25s;
+}
+
+#line1.rest {
+  animation: Anim3;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#line1.active {
+  animation: Anim1;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#line2.active {
+  transform: translateX(1rem);
+  opacity: 0;
+  transition: 0.25s;
+  transition-delay: 0.25s;
+}
+#line3.rest {
+  animation: Anim4;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#line3.active {
+  animation: Anim2;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes Anim1 {
+  0% {
+    transform: translate(0px);
+  }
+
+  50% {
+    transform: translateY(0.5rem);
+  }
+
+  100% {
+    transform: translateY(0.38rem) rotate(-45deg);
+  }
+}
+
+@keyframes Anim2 {
+  0% {
+    transform: translate(0px);
+  }
+
+  50% {
+    transform: translateY(-0.5rem);
+  }
+
+  100% {
+    transform: translateY(-0.38rem) rotate(45deg);
+  }
+}
+
+@keyframes Anim3 {
+  0% {
+    transform: translateY(0.38rem) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(0.5rem);
+  }
+
+  100% {
+    transform: translate(0px);
+  }
+}
+
+@keyframes Anim4 {
+  0% {
+    transform: translateY(-0.38rem) rotate(-45deg);
+  }
+
+  50% {
+    transform: translateY(-0.5rem);
+  }
+
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.top {
+  #Bookmark.visited {
+    width: fit-content;
+  }
+}
+
+.support.active {
+  opacity: 1;
+  transform: translateY(5rem);
+  transition: 0.3s;
+  z-index: 2;
+  pointer-events: all;
+}
+
+.select.active {
+  border: 2px solid $cyan;
+  & > div > div {
+    display: block;
+  }
+  .pledge {
+    display: flex;
+  }
+}
+
+.popUp.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1.1, 1.1);
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 594px) {
+  header {
+    width: 100vw;
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 2rem;
+    right: 10%;
+    opacity: 1;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    width: 14rem;
+    height: fit-content;
+    p {
+      @include text(Commissioner_reg, 1rem, 400, $white);
+      padding: 0;
+      border: 0;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+
+  .logo {
+    left: 10%;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  main {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  .top {
+    height: 14rem;
+    bottom: 3.6rem;
+    & > div > #Bookmark {
+      width: 11rem;
+      @include text(Commissioner_reg, 1rem, 600, $darkGray);
+      display: flex;
+      p {
+        display: inline;
+        position: relative;
+        top: 1rem;
+        left: 1rem;
+      }
+    }
+  }
+
+  .top {
+    #Bookmark.visited {
+      width: 12rem;
+    }
+  }
+
+  .stats {
+    position: relative;
+    height: 12rem;
+    padding: 2rem;
+    align-items: start;
+    .flexStats {
+      flex-direction: row;
+      width: 80%;
+      div {
+        width: 0.5px;
+        height: 4rem;
+      }
+    }
+    .bar {
+      width: 100%;
+    }
+  }
+
+  .bulk {
+    section {
+      position: relative;
+      h3 {
+        position: relative;
+        b {
+          position: absolute;
+          right: 0;
+          top: -0.1rem;
+        }
+      }
+      button {
+        position: absolute;
+        right: 1.2rem;
+        bottom: 2.4rem;
+      }
+      h4 {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .support {
+    max-width: 43.5rem;
+    padding: 2rem;
+    section {
+      .pledge {
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        p {
+          margin-top: 1.2rem;
+        }
+        .space {
+          margin-top: 1.5rem;
+          width: 14rem;
+        }
+      }
+    }
+  }
+
+  .popUp {
+    width: 28rem;
+    margin-left: -14rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .top {
+    bottom: 4rem;
+    height: 15rem;
+    h2 {
+      font-size: 1.6rem;
+    }
+    & > p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .stats {
+    height: 13rem;
+    .flexStats {
+      text-align: start;
+      h1 {
+        font-size: 2rem;
+        span {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .bulk {
+    padding: 2rem;
+    p {
+      font-size: 1.1rem;
+    }
+
+    .about {
+      h2 {
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+    .bamboo,
+    .black,
+    .mahogany {
+      padding: 2rem;
+      h3 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+      button {
+        right: 2rem;
+        bottom: 1.5rem;
+      }
+      h4 {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .support {
+    left: 50%;
+    margin-left: -21.75rem;
+    h2 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+
+    .pledgeRd,
+    .bambooRd,
+    .blackRd,
+    .mahoganyRd {
+      h3 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .popUp {
+    h2 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  header {
+    .logo {
+      top: 3rem;
+      left: 10%;
+      width: 10rem;
+    }
+
+    nav {
+      top: 3rem;
+      right: 9%;
+    }
+  }
+
+  main {
+    max-width: 62rem;
+    margin: 0 auto;
+
+    .top {
+      h2 {
+        font-size: 1.8rem;
+      }
+      & > p {
+        font-size: 1.1rem;
+      }
+    }
+
+    .stats {
+      .flexStats {
+        h1 {
+          font-size: 2.4rem;
+          span {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .bulk {
+    padding: 3rem;
+    .about {
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    .bamboo,
+    .black,
+    .mahogany {
+      h3 {
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .support {
+    top: 6rem;
+    margin-left: -27rem;
+    max-width: 54rem;
+    padding: 3rem;
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .pledgeRd,
+    .bambooRd,
+    .blackRd,
+    .mahoganyRd {
+      padding: 2rem;
+      .radio {
+        margin-top: 0rem;
+        width: 2rem;
+        height: 2rem;
+        div {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+      h3 {
+        font-size: 1.3rem;
+        margin-left: 3rem;
+        margin-top: 0.3rem;
+        br {
+          display: none;
+        }
+        b {
+          font-size: 1.3rem;
+          margin-left: 1rem;
+        }
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      button {
+        right: 2rem;
+        bottom: 1.5rem;
+      }
+      h4 {
+        margin-bottom: 0;
+        position: absolute;
+        right: 2rem;
+      }
+    }
+
+    .pledge {
+      padding: 0 2rem;
+      border-top: 1px solid $darkGray;
+      display: none;
+      align-items: center;
+      margin: 0 -2rem;
+      p {
+        font-size: 1.3rem;
+      }
+      input {
+        height: 3rem;
+        width: 7rem;
+        border-radius: 4rem;
+      }
+      button {
+        height: 3rem;
+        width: 8rem;
+      }
+    }
+
+    .pledgeRd {
+      .pledge {
+        button {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .popUp {
+    width: 39rem;
+    height: 27rem;
+    padding: 2rem 3rem;
+    margin-left: -19.5rem;
+    margin-top: -13.5rem;
+    img {
+      width: 6rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1260px) {
+  header {
+    .logo {
+      top: 4rem;
+      left: 12%;
+      width: 10rem;
+    }
+
+    nav {
+      top: 4rem;
+      right: 12%;
+    }
+  }
+
+  main {
+    .top {
+      bottom: 7.5rem;
+      height: 16rem;
+      h2 {
+        font-size: 2rem;
+      }
+      & > p {
+        font-size: 1.2rem;
+      }
+    }
+
+    .stats {
+      position: relative;
+      bottom: 5rem;
+    }
+
+    .bulk {
+      position: relative;
+      bottom: 2rem;
+    }
+  }
+}
