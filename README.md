@@ -10,11 +10,11 @@ Sass/scss and Javascript
 
 ### Screenshot
 
-![](images/Web%20capture_12-8-2023_54236_127.0.0.1.jpeg)
+![images/Web%20capture_12-8-2023_54236_127.0.0.1.jpeg](images/Web%20capture_12-8-2023_54236_127.0.0.1.jpeg)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://fengboris-crowdfunding-page.netlify.app)
+- Live Site URL: [https://fengboris-crowdfunding-page.netlify.app](https://fengboris-crowdfunding-page.netlify.app)
 
 ### Built with
 
