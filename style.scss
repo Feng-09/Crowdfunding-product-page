@@ -326,9 +326,9 @@ b {
 .support {
   @include article();
   padding: 1.5rem;
-  position: absolute;
+  position: fixed;
   left: 6.5%;
-  top: 3rem;
+  top: 2rem;
   pointer-events: none;
   opacity: 0;
   transition: 0.3s;
@@ -351,115 +351,120 @@ b {
     margin-bottom: 2rem;
   }
 
-  .pledgeRd {
-    h3 {
-      margin-top: 0.8rem;
-    }
-    button {
-      @include button();
-      height: 2.7rem;
-      width: 7.5rem;
-      margin-top: 1.3rem;
-    }
-  }
+  .scroll {
+    height: 57vh;
+    overflow-y: scroll;
 
-  & > section {
-    @include section();
-    position: relative;
-    h3 {
-      margin-left: 2.4rem;
-      width: fit-content;
-      &:hover {
-        color: $cyan;
-        cursor: pointer;
+    .pledgeRd {
+      h3 {
+        margin-top: 0.8rem;
       }
-    }
-    h4 {
-      font-size: 1.5rem;
-      span {
-        bottom: 0.2rem;
-      }
-    }
-    .radio {
-      position: absolute;
-      margin-top: 0.8rem;
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 2rem;
-      border: 1px solid $darkGray;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &:hover {
-        border-color: $cyan;
-      }
-      div {
-        width: 0.8rem;
-        height: 0.8rem;
-        background-color: $cyan;
-        border-radius: 1rem;
-        display: none;
+      button {
+        @include button();
+        height: 2.7rem;
+        width: 7.5rem;
+        margin-top: 1.3rem;
       }
     }
 
-    .pledge {
-      padding: 0 1.2rem;
-      border-top: 1px solid $darkGray;
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0 -1.2rem;
-      background-color: $white;
-      text-align: center;
-
-      p {
-        @include text(Commissioner_reg, 1.1rem, 400, $darkGray);
-        margin: 1.6rem 0 0 0;
+    & > section {
+      @include section();
+      position: relative;
+      h3 {
+        margin-left: 2.4rem;
+        width: fit-content;
+        &:hover {
+          color: $cyan;
+          cursor: pointer;
+        }
       }
-      .space {
-        position: relative;
+      h4 {
+        font-size: 1.5rem;
+        span {
+          bottom: 0.2rem;
+        }
+      }
+      .radio {
+        position: absolute;
+        margin-top: 0.8rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 2rem;
+        border: 1px solid $darkGray;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          border-color: $cyan;
+        }
+        div {
+          width: 0.8rem;
+          height: 0.8rem;
+          background-color: $cyan;
+          border-radius: 1rem;
+          display: none;
+        }
+      }
+
+      .pledge {
+        padding: 0 1.2rem;
+        border-top: 1px solid $darkGray;
+        display: none;
+        flex-direction: column;
         justify-content: space-between;
-        width: 100%;
-        margin: 1rem 0 0 0;
-        input {
-          height: 2.7rem;
-          width: 6rem;
-          border-radius: 2rem;
-          @include text(Commissioner_bold, 1.2rem, 700, $black);
-          text-align: center;
-          outline: none;
-          &:hover {
-            border-color: $cyan;
-            cursor: pointer;
+        align-items: center;
+        margin: 0 -1.2rem;
+        background-color: $white;
+        text-align: center;
+
+        p {
+          @include text(Commissioner_reg, 1.1rem, 400, $darkGray);
+          margin: 1.6rem 0 0 0;
+        }
+        .space {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          margin: 1rem 0 0 0;
+          input {
+            height: 2.7rem;
+            width: 6rem;
+            border-radius: 2rem;
+            @include text(Commissioner_bold, 1.2rem, 700, $black);
+            text-align: center;
+            outline: none;
+            &:hover {
+              border-color: $cyan;
+              cursor: pointer;
+            }
+          }
+          button {
+            @include button();
+            height: 2.7rem;
+            width: 7.5rem;
+          }
+          .dollar {
+            position: absolute;
+            left: 1.2rem;
+            top: 0.8rem;
           }
         }
+      }
+    }
+
+    .pledgeRd {
+      .pledge {
         button {
-          @include button();
-          height: 2.7rem;
-          width: 7.5rem;
-        }
-        .dollar {
-          position: absolute;
-          left: 1.2rem;
-          top: 0.8rem;
+          margin: 1rem auto 0 auto;
         }
       }
     }
-  }
 
-  .pledgeRd {
-    .pledge {
-      button {
-        margin: 1rem auto 0 auto;
-      }
+    .mahoganyRd {
+      opacity: 0.5;
+      pointer-events: none;
     }
-  }
-
-  .mahoganyRd {
-    opacity: 0.5;
-    pointer-events: none;
   }
 }
 
@@ -611,13 +616,15 @@ nav.active {
   pointer-events: all;
 }
 
-.select.active {
-  border: 2px solid $cyan;
-  & > div > div {
-    display: block;
-  }
-  .pledge {
-    display: flex;
+.scroll {
+  .select.active {
+    border: 2px solid $cyan;
+    & > div > div {
+      display: block;
+    }
+    .pledge {
+      display: flex;
+    }
   }
 }
 
@@ -733,17 +740,19 @@ nav.active {
   .support {
     max-width: 43.5rem;
     padding: 2rem;
-    section {
-      .pledge {
-        display: none;
-        flex-direction: row;
-        justify-content: space-between;
-        p {
-          margin-top: 1.2rem;
-        }
-        .space {
-          margin-top: 1.5rem;
-          width: 14rem;
+    .scroll {
+      section {
+        .pledge {
+          display: none;
+          flex-direction: row;
+          justify-content: space-between;
+          p {
+            margin-top: 1.2rem;
+          }
+          .space {
+            margin-top: 1.5rem;
+            width: 14rem;
+          }
         }
       }
     }
@@ -909,7 +918,7 @@ nav.active {
   }
 
   .support {
-    top: 6rem;
+    top: 2rem;
     margin-left: -27rem;
     max-width: 54rem;
     padding: 3rem;
@@ -919,71 +928,74 @@ nav.active {
     p {
       font-size: 1.2rem;
     }
-    .pledgeRd,
-    .bambooRd,
-    .blackRd,
-    .mahoganyRd {
-      padding: 2rem;
-      .radio {
-        margin-top: 0rem;
-        width: 2rem;
-        height: 2rem;
-        div {
-          width: 1rem;
-          height: 1rem;
+    .scroll {
+      height: 54vh;
+      .pledgeRd,
+      .bambooRd,
+      .blackRd,
+      .mahoganyRd {
+        padding: 2rem;
+        .radio {
+          margin-top: 0rem;
+          width: 2rem;
+          height: 2rem;
+          div {
+            width: 1rem;
+            height: 1rem;
+          }
         }
-      }
-      h3 {
-        font-size: 1.3rem;
-        margin-left: 3rem;
-        margin-top: 0.3rem;
-        br {
-          display: none;
-        }
-        b {
+        h3 {
           font-size: 1.3rem;
-          margin-left: 1rem;
+          margin-left: 3rem;
+          margin-top: 0.3rem;
+          br {
+            display: none;
+          }
+          b {
+            font-size: 1.3rem;
+            margin-left: 1rem;
+          }
+        }
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 2rem;
+        }
+        button {
+          right: 2rem;
+          bottom: 1.5rem;
+        }
+        h4 {
+          margin-bottom: 0;
+          position: absolute;
+          right: 2rem;
         }
       }
-      p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-      }
-      button {
-        right: 2rem;
-        bottom: 1.5rem;
-      }
-      h4 {
-        margin-bottom: 0;
-        position: absolute;
-        right: 2rem;
-      }
-    }
 
-    .pledge {
-      padding: 0 2rem;
-      border-top: 1px solid $darkGray;
-      display: none;
-      align-items: center;
-      margin: 0 -2rem;
-      p {
-        font-size: 1.3rem;
-      }
-      input {
-        height: 3rem;
-        width: 7rem;
-        border-radius: 4rem;
-      }
-      button {
-        height: 3rem;
-        width: 8rem;
-      }
-    }
-
-    .pledgeRd {
       .pledge {
+        padding: 0 2rem;
+        border-top: 1px solid $darkGray;
+        display: none;
+        align-items: center;
+        margin: 0 -2rem;
+        p {
+          font-size: 1.3rem;
+        }
+        input {
+          height: 3rem;
+          width: 7rem;
+          border-radius: 4rem;
+        }
         button {
-          margin-top: 1.5rem;
+          height: 3rem;
+          width: 8rem;
+        }
+      }
+
+      .pledgeRd {
+        .pledge {
+          button {
+            margin-top: 1.5rem;
+          }
         }
       }
     }

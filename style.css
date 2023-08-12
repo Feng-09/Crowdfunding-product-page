@@ -447,9 +447,9 @@ b {
   border-radius: 0.5rem;
   width: 87%;
   padding: 1.5rem;
-  position: absolute;
+  position: fixed;
   left: 6.5%;
-  top: 3rem;
+  top: 2rem;
   pointer-events: none;
   opacity: 0;
   transition: 0.3s;
@@ -475,10 +475,14 @@ b {
   line-height: 1.3rem;
   margin-bottom: 2rem;
 }
-.support .pledgeRd h3 {
+.support .scroll {
+  height: 57vh;
+  overflow-y: scroll;
+}
+.support .scroll .pledgeRd h3 {
   margin-top: 0.8rem;
 }
-.support .pledgeRd button {
+.support .scroll .pledgeRd button {
   font-family: Commissioner_reg;
   font-size: 1rem;
   color: hsl(0, 0%, 85%);
@@ -491,13 +495,13 @@ b {
   width: 7.5rem;
   margin-top: 1.3rem;
 }
-.support .pledgeRd button:hover {
+.support .scroll .pledgeRd button:hover {
   background-color: hsl(176, 72%, 28%);
   transform: scale(1.05, 1.05);
   transition: 0.5s;
   cursor: pointer;
 }
-.support > section {
+.support .scroll > section {
   border: 1px solid hsl(0, 0%, 48%);
   border-radius: 0.5rem;
   display: flex;
@@ -507,7 +511,7 @@ b {
   margin-bottom: 1.5rem;
   position: relative;
 }
-.support > section > h3 {
+.support .scroll > section > h3 {
   font-family: Commissioner_bold;
   font-size: 1rem;
   color: hsl(0, 0%, 0%);
@@ -515,7 +519,7 @@ b {
   line-height: 1.5rem;
   margin-bottom: 1.5rem;
 }
-.support > section > p {
+.support .scroll > section > p {
   font-family: Commissioner_reg;
   font-size: 0.9rem;
   color: hsl(0, 0%, 48%);
@@ -523,14 +527,14 @@ b {
   line-height: 1.3rem;
   margin-bottom: 1.5rem;
 }
-.support > section > h4 {
+.support .scroll > section > h4 {
   font-family: Commissioner_bold;
   font-size: 2rem;
   color: hsl(0, 0%, 0%);
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
-.support > section > h4 > span {
+.support .scroll > section > h4 > span {
   font-family: Commissioner_reg;
   font-size: 1rem;
   color: hsl(0, 0%, 48%);
@@ -538,7 +542,7 @@ b {
   position: relative;
   bottom: 0.3rem;
 }
-.support > section > button {
+.support .scroll > section > button {
   font-family: Commissioner_reg;
   font-size: 1rem;
   color: hsl(0, 0%, 85%);
@@ -550,28 +554,28 @@ b {
   width: 10rem;
   height: 3rem;
 }
-.support > section > button:hover {
+.support .scroll > section > button:hover {
   background-color: hsl(176, 72%, 28%);
   transform: scale(1.05, 1.05);
   transition: 0.5s;
   cursor: pointer;
 }
-.support > section h3 {
+.support .scroll > section h3 {
   margin-left: 2.4rem;
   width: -moz-fit-content;
   width: fit-content;
 }
-.support > section h3:hover {
+.support .scroll > section h3:hover {
   color: hsl(176, 50%, 47%);
   cursor: pointer;
 }
-.support > section h4 {
+.support .scroll > section h4 {
   font-size: 1.5rem;
 }
-.support > section h4 span {
+.support .scroll > section h4 span {
   bottom: 0.2rem;
 }
-.support > section .radio {
+.support .scroll > section .radio {
   position: absolute;
   margin-top: 0.8rem;
   width: 1.5rem;
@@ -582,17 +586,17 @@ b {
   align-items: center;
   justify-content: center;
 }
-.support > section .radio:hover {
+.support .scroll > section .radio:hover {
   border-color: hsl(176, 50%, 47%);
 }
-.support > section .radio div {
+.support .scroll > section .radio div {
   width: 0.8rem;
   height: 0.8rem;
   background-color: hsl(176, 50%, 47%);
   border-radius: 1rem;
   display: none;
 }
-.support > section .pledge {
+.support .scroll > section .pledge {
   padding: 0 1.2rem;
   border-top: 1px solid hsl(0, 0%, 48%);
   display: none;
@@ -603,21 +607,21 @@ b {
   background-color: hsl(0, 0%, 85%);
   text-align: center;
 }
-.support > section .pledge p {
+.support .scroll > section .pledge p {
   font-family: Commissioner_reg;
   font-size: 1.1rem;
   color: hsl(0, 0%, 48%);
   font-weight: 400;
   margin: 1.6rem 0 0 0;
 }
-.support > section .pledge .space {
+.support .scroll > section .pledge .space {
   position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin: 1rem 0 0 0;
 }
-.support > section .pledge .space input {
+.support .scroll > section .pledge .space input {
   height: 2.7rem;
   width: 6rem;
   border-radius: 2rem;
@@ -628,11 +632,11 @@ b {
   text-align: center;
   outline: none;
 }
-.support > section .pledge .space input:hover {
+.support .scroll > section .pledge .space input:hover {
   border-color: hsl(176, 50%, 47%);
   cursor: pointer;
 }
-.support > section .pledge .space button {
+.support .scroll > section .pledge .space button {
   font-family: Commissioner_reg;
   font-size: 1rem;
   color: hsl(0, 0%, 85%);
@@ -644,21 +648,21 @@ b {
   height: 2.7rem;
   width: 7.5rem;
 }
-.support > section .pledge .space button:hover {
+.support .scroll > section .pledge .space button:hover {
   background-color: hsl(176, 72%, 28%);
   transform: scale(1.05, 1.05);
   transition: 0.5s;
   cursor: pointer;
 }
-.support > section .pledge .space .dollar {
+.support .scroll > section .pledge .space .dollar {
   position: absolute;
   left: 1.2rem;
   top: 0.8rem;
 }
-.support .pledgeRd .pledge button {
+.support .scroll .pledgeRd .pledge button {
   margin: 1rem auto 0 auto;
 }
-.support .mahoganyRd {
+.support .scroll .mahoganyRd {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -820,13 +824,13 @@ nav.active {
   pointer-events: all;
 }
 
-.select.active {
+.scroll .select.active {
   border: 2px solid hsl(176, 50%, 47%);
 }
-.select.active > div > div {
+.scroll .select.active > div > div {
   display: block;
 }
-.select.active .pledge {
+.scroll .select.active .pledge {
   display: flex;
 }
 
@@ -937,15 +941,15 @@ nav.active {
     max-width: 43.5rem;
     padding: 2rem;
   }
-  .support section .pledge {
+  .support .scroll section .pledge {
     display: none;
     flex-direction: row;
     justify-content: space-between;
   }
-  .support section .pledge p {
+  .support .scroll section .pledge p {
     margin-top: 1.2rem;
   }
-  .support section .pledge .space {
+  .support .scroll section .pledge .space {
     margin-top: 1.5rem;
     width: 14rem;
   }
@@ -1090,7 +1094,7 @@ nav.active {
     font-size: 1.2rem;
   }
   .support {
-    top: 6rem;
+    top: 2rem;
     margin-left: -27rem;
     max-width: 54rem;
     padding: 3rem;
@@ -1101,90 +1105,93 @@ nav.active {
   .support p {
     font-size: 1.2rem;
   }
-  .support .pledgeRd,
-  .support .bambooRd,
-  .support .blackRd,
-  .support .mahoganyRd {
+  .support .scroll {
+    height: 54vh;
+  }
+  .support .scroll .pledgeRd,
+  .support .scroll .bambooRd,
+  .support .scroll .blackRd,
+  .support .scroll .mahoganyRd {
     padding: 2rem;
   }
-  .support .pledgeRd .radio,
-  .support .bambooRd .radio,
-  .support .blackRd .radio,
-  .support .mahoganyRd .radio {
+  .support .scroll .pledgeRd .radio,
+  .support .scroll .bambooRd .radio,
+  .support .scroll .blackRd .radio,
+  .support .scroll .mahoganyRd .radio {
     margin-top: 0rem;
     width: 2rem;
     height: 2rem;
   }
-  .support .pledgeRd .radio div,
-  .support .bambooRd .radio div,
-  .support .blackRd .radio div,
-  .support .mahoganyRd .radio div {
+  .support .scroll .pledgeRd .radio div,
+  .support .scroll .bambooRd .radio div,
+  .support .scroll .blackRd .radio div,
+  .support .scroll .mahoganyRd .radio div {
     width: 1rem;
     height: 1rem;
   }
-  .support .pledgeRd h3,
-  .support .bambooRd h3,
-  .support .blackRd h3,
-  .support .mahoganyRd h3 {
+  .support .scroll .pledgeRd h3,
+  .support .scroll .bambooRd h3,
+  .support .scroll .blackRd h3,
+  .support .scroll .mahoganyRd h3 {
     font-size: 1.3rem;
     margin-left: 3rem;
     margin-top: 0.3rem;
   }
-  .support .pledgeRd h3 br,
-  .support .bambooRd h3 br,
-  .support .blackRd h3 br,
-  .support .mahoganyRd h3 br {
+  .support .scroll .pledgeRd h3 br,
+  .support .scroll .bambooRd h3 br,
+  .support .scroll .blackRd h3 br,
+  .support .scroll .mahoganyRd h3 br {
     display: none;
   }
-  .support .pledgeRd h3 b,
-  .support .bambooRd h3 b,
-  .support .blackRd h3 b,
-  .support .mahoganyRd h3 b {
+  .support .scroll .pledgeRd h3 b,
+  .support .scroll .bambooRd h3 b,
+  .support .scroll .blackRd h3 b,
+  .support .scroll .mahoganyRd h3 b {
     font-size: 1.3rem;
     margin-left: 1rem;
   }
-  .support .pledgeRd p,
-  .support .bambooRd p,
-  .support .blackRd p,
-  .support .mahoganyRd p {
+  .support .scroll .pledgeRd p,
+  .support .scroll .bambooRd p,
+  .support .scroll .blackRd p,
+  .support .scroll .mahoganyRd p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
   }
-  .support .pledgeRd button,
-  .support .bambooRd button,
-  .support .blackRd button,
-  .support .mahoganyRd button {
+  .support .scroll .pledgeRd button,
+  .support .scroll .bambooRd button,
+  .support .scroll .blackRd button,
+  .support .scroll .mahoganyRd button {
     right: 2rem;
     bottom: 1.5rem;
   }
-  .support .pledgeRd h4,
-  .support .bambooRd h4,
-  .support .blackRd h4,
-  .support .mahoganyRd h4 {
+  .support .scroll .pledgeRd h4,
+  .support .scroll .bambooRd h4,
+  .support .scroll .blackRd h4,
+  .support .scroll .mahoganyRd h4 {
     margin-bottom: 0;
     position: absolute;
     right: 2rem;
   }
-  .support .pledge {
+  .support .scroll .pledge {
     padding: 0 2rem;
     border-top: 1px solid hsl(0, 0%, 48%);
     display: none;
     align-items: center;
     margin: 0 -2rem;
   }
-  .support .pledge p {
+  .support .scroll .pledge p {
     font-size: 1.3rem;
   }
-  .support .pledge input {
+  .support .scroll .pledge input {
     height: 3rem;
     width: 7rem;
     border-radius: 4rem;
   }
-  .support .pledge button {
+  .support .scroll .pledge button {
     height: 3rem;
     width: 8rem;
   }
-  .support .pledgeRd .pledge button {
+  .support .scroll .pledgeRd .pledge button {
     margin-top: 1.5rem;
   }
   .popUp {
