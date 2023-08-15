@@ -21,8 +21,8 @@ $black: hsl(0, 0%, 0%);
 $darkGray: hsl(0, 0%, 48%);
 $lGray: hsl(0, 0%, 75%);
 $liGray: hsl(0, 0%, 75%, 0.4);
-$bg: hsl(0, 0%, 82%);
-$white: hsl(0, 0%, 85%);
+$bg: hsl(0, 0%, 90%);
+$white: hsl(0, 0%, 99%);
 
 @mixin text($font, $size, $weight, $color) {
   font-family: $font;
@@ -880,6 +880,7 @@ nav.active {
       }
       & > p {
         font-size: 1.1rem;
+        line-height: 1.8rem;
       }
     }
 
@@ -903,6 +904,7 @@ nav.active {
       }
       p {
         font-size: 1.2rem;
+        line-height: 1.8rem;
       }
     }
     .bamboo,
@@ -913,6 +915,7 @@ nav.active {
       }
       p {
         font-size: 1.2rem;
+        line-height: 1.8rem;
       }
     }
   }
@@ -927,6 +930,7 @@ nav.active {
     }
     p {
       font-size: 1.2rem;
+      line-height: 1.8rem;
     }
     .scroll {
       height: 54vh;
@@ -958,6 +962,7 @@ nav.active {
         }
         p {
           font-size: 1.2rem;
+          line-height: 1.8rem;
           margin-bottom: 2rem;
         }
         button {
@@ -979,6 +984,7 @@ nav.active {
         margin: 0 -2rem;
         p {
           font-size: 1.3rem;
+          line-height: 1.8rem;
         }
         input {
           height: 3rem;
@@ -1015,7 +1021,7 @@ nav.active {
     }
     p {
       font-size: 1.2rem;
-      line-height: 1.6rem;
+      line-height: 1.8rem;
     }
   }
 }

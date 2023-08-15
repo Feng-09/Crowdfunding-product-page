@@ -20,7 +20,7 @@ html {
 
 body {
   width: 100vw;
-  background-color: hsl(0, 0%, 82%);
+  background-color: hsl(0, 0%, 90%);
   z-index: 0.1px;
 }
 
@@ -48,7 +48,7 @@ nav {
   position: absolute;
   right: 5%;
   top: 5.5rem;
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 99%);
   border-radius: 0.5rem;
   z-index: 2;
   transition: 0.5s;
@@ -90,7 +90,7 @@ nav > p a {
   width: 1.2rem;
   height: 0.2rem;
   border-radius: 1rem;
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 99%);
 }
 
 .hero {
@@ -109,7 +109,7 @@ main {
 }
 
 .top {
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 99%);
   border-radius: 0.5rem;
   width: 87%;
   height: 16.5rem;
@@ -149,7 +149,7 @@ main {
 .top > div > button {
   font-family: Commissioner_reg;
   font-size: 1rem;
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 99%);
   font-weight: 700;
   background-color: hsl(176, 50%, 47%);
   border-radius: 5rem;
@@ -177,7 +177,7 @@ main {
 }
 
 .stats {
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 99%);
   border-radius: 0.5rem;
   width: 87%;
   display: flex;
@@ -239,7 +239,7 @@ b {
 }
 
 .bulk {
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 99%);
   border-radius: 0.5rem;
   width: 87%;
   padding: 1.5rem;
@@ -305,7 +305,7 @@ b {
 .bulk > .bamboo > button {
   font-family: Commissioner_reg;
   font-size: 1rem;
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 99%);
   font-weight: 700;
   background-color: hsl(176, 50%, 47%);
   border-radius: 5rem;
@@ -363,7 +363,7 @@ b {
 .bulk > .black > button {
   font-family: Commissioner_reg;
   font-size: 1rem;
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 99%);
   font-weight: 700;
   background-color: hsl(176, 50%, 47%);
   border-radius: 5rem;
@@ -423,7 +423,7 @@ b {
 .bulk > .mahogany > button {
   font-family: Commissioner_reg;
   font-size: 1rem;
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 99%);
   font-weight: 700;
   background-color: hsl(176, 50%, 47%);
   border-radius: 5rem;
@@ -443,7 +443,7 @@ b {
 }
 
 .support {
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 99%);
   border-radius: 0.5rem;
   width: 87%;
   padding: 1.5rem;
@@ -485,7 +485,7 @@ b {
 .support .scroll .pledgeRd button {
   font-family: Commissioner_reg;
   font-size: 1rem;
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 99%);
   font-weight: 700;
   background-color: hsl(176, 50%, 47%);
   border-radius: 5rem;
@@ -545,7 +545,7 @@ b {
 .support .scroll > section > button {
   font-family: Commissioner_reg;
   font-size: 1rem;
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 99%);
   font-weight: 700;
   background-color: hsl(176, 50%, 47%);
   border-radius: 5rem;
@@ -604,7 +604,7 @@ b {
   justify-content: space-between;
   align-items: center;
   margin: 0 -1.2rem;
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 99%);
   text-align: center;
 }
 .support .scroll > section .pledge p {
@@ -639,7 +639,7 @@ b {
 .support .scroll > section .pledge .space button {
   font-family: Commissioner_reg;
   font-size: 1rem;
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 99%);
   font-weight: 700;
   background-color: hsl(176, 50%, 47%);
   border-radius: 5rem;
@@ -668,7 +668,7 @@ b {
 }
 
 .popUp {
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 99%);
   border-radius: 0.5rem;
   width: 87%;
   position: fixed;
@@ -708,7 +708,7 @@ b {
 .popUp button {
   font-family: Commissioner_reg;
   font-size: 1rem;
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 99%);
   font-weight: 700;
   background-color: hsl(176, 50%, 47%);
   border-radius: 5rem;
@@ -861,14 +861,14 @@ nav.active {
   nav p {
     font-family: Commissioner_reg;
     font-size: 1rem;
-    color: hsl(0, 0%, 85%);
+    color: hsl(0, 0%, 99%);
     font-weight: 400;
     padding: 0;
     border: 0;
   }
   nav p a {
     text-decoration: none;
-    color: hsl(0, 0%, 85%);
+    color: hsl(0, 0%, 99%);
   }
   .logo {
     left: 10%;
@@ -1067,6 +1067,7 @@ nav.active {
   }
   main .top > p {
     font-size: 1.1rem;
+    line-height: 1.8rem;
   }
   main .stats .flexStats h1 {
     font-size: 2.4rem;
@@ -1082,6 +1083,7 @@ nav.active {
   }
   .bulk .about p {
     font-size: 1.2rem;
+    line-height: 1.8rem;
   }
   .bulk .bamboo h3,
   .bulk .black h3,
@@ -1092,6 +1094,7 @@ nav.active {
   .bulk .black p,
   .bulk .mahogany p {
     font-size: 1.2rem;
+    line-height: 1.8rem;
   }
   .support {
     top: 2rem;
@@ -1104,6 +1107,7 @@ nav.active {
   }
   .support p {
     font-size: 1.2rem;
+    line-height: 1.8rem;
   }
   .support .scroll {
     height: 54vh;
@@ -1155,6 +1159,7 @@ nav.active {
   .support .scroll .blackRd p,
   .support .scroll .mahoganyRd p {
     font-size: 1.2rem;
+    line-height: 1.8rem;
     margin-bottom: 2rem;
   }
   .support .scroll .pledgeRd button,
@@ -1181,6 +1186,7 @@ nav.active {
   }
   .support .scroll .pledge p {
     font-size: 1.3rem;
+    line-height: 1.8rem;
   }
   .support .scroll .pledge input {
     height: 3rem;
@@ -1209,7 +1215,7 @@ nav.active {
   }
   .popUp p {
     font-size: 1.2rem;
-    line-height: 1.6rem;
+    line-height: 1.8rem;
   }
 }
 @media screen and (min-width: 1260px) {
